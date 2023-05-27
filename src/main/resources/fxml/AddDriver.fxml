@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="200.0" prefWidth="376.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.tuwien.sepm.assignment.individual.universe.ui.AddDriverController">
+   <children>
+      <Button fx:id="bt_save" layoutX="145.0" layoutY="149.0" mnemonicParsing="false" onAction="#OnClickedSaveButton" prefHeight="36.0" prefWidth="87.0" text="SAVE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="tf_title" alignment="CENTER" layoutX="21.0" layoutY="8.0" prefHeight="17.0" prefWidth="335.0" textFill="#d71818" />
+      <Label fx:id="lb_id" layoutX="32.0" layoutY="71.0" prefHeight="17.0" prefWidth="178.0" text="Driver License ID:" />
+      <Label fx:id="lb_cdate" layoutX="32.0" layoutY="110.0" prefHeight="17.0" prefWidth="178.0" text="Creation Date of Licence:" />
+      <TextField fx:id="tf_id" layoutX="221.0" layoutY="66.0" prefHeight="27.0" prefWidth="134.0" />
+      <DatePicker fx:id="dp_cdate" layoutX="221.0" layoutY="105.0" prefHeight="27.0" prefWidth="134.0" />
+      <RadioButton fx:id="rb_A" layoutX="201.0" layoutY="34.0" mnemonicParsing="false" text="A" visible="false">
+         <toggleGroup>
+            <ToggleGroup fx:id="Group1" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rb_B" layoutX="264.0" layoutY="34.0" mnemonicParsing="false" text="B" toggleGroup="$Group1" visible="false" />
+      <RadioButton fx:id="rb_C" layoutX="322.0" layoutY="34.0" mnemonicParsing="false" text="C" toggleGroup="$Group1" visible="false" />
+      <Label fx:id="lb_id1" layoutX="32.0" layoutY="34.0" prefHeight="17.0" prefWidth="153.0" text="License Typ:" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#onMouseEnteredMainFrame" prefHeight="550.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.tuwien.sepm.assignment.individual.universe.ui.MainFrameController">
+   <children>
+      <Label text="Vehicle Rent Management" textAlignment="CENTER" textFill="#a45f05" StackPane.alignment="TOP_CENTER">
+         <StackPane.margin>
+            <Insets top="12.0" />
+         </StackPane.margin>
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Vehicle Administrator / New Booking">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="501.0" prefWidth="918.0">
+                     <children>
+                        <TableView fx:id="tv_vehiclelist" layoutX="393.0" layoutY="15.0" prefHeight="402.0" prefWidth="490.0">
+                          <columns>
+                            <TableColumn fx:id="tcTitle" prefWidth="153.0" text="Model" />
+                            <TableColumn fx:id="tcDrivingLicence" prefWidth="101.5" text="D. Licenses" />
+                              <TableColumn fx:id="tcPowerUnit" prefWidth="100.0" text="P. Unit" />
+                              <TableColumn fx:id="tcPrice" prefWidth="113.5" text="Price p.hr. in €" />
+                          </columns>
+                        </TableView>
+                        <Label alignment="CENTER" layoutX="16.0" layoutY="17.0" lineSpacing="5.0" prefHeight="23.0" prefWidth="353.0" text="search options" textAlignment="CENTER" textFill="#a45f05" textOverrun="CLIP" underline="true" AnchorPane.bottomAnchor="427.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="531.0" AnchorPane.topAnchor="17.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="mFDLtitle" layoutX="12.0" layoutY="212.0" prefHeight="17.0" prefWidth="115.0" text="Driving Licenses:" visible="false" AnchorPane.bottomAnchor="238.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="771.0" AnchorPane.topAnchor="212.0" />
+                        <Label layoutX="14.0" layoutY="98.0" prefHeight="17.0" prefWidth="115.0" text="Price p.hr." AnchorPane.bottomAnchor="352.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="771.0" AnchorPane.topAnchor="98.0" />
+                        <Label alignment="CENTER" layoutX="12.0" layoutY="273.0" prefHeight="18.0" prefWidth="115.0" text="Period of booking:" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="273.0" />
+                        <Label layoutX="15.0" layoutY="60.0" prefHeight="17.0" prefWidth="115.0" text="Model:" AnchorPane.bottomAnchor="390.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="770.0" AnchorPane.topAnchor="60.0" />
+                        <Label layoutX="14.0" layoutY="137.0" prefHeight="17.0" prefWidth="115.0" text="Seating Capacity:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="137.0" />
+                        <TextField fx:id="tf_model" layoutX="137.0" layoutY="55.0" prefHeight="27.0" prefWidth="230.0" promptText="e.g. BMW X5" AnchorPane.bottomAnchor="385.0" AnchorPane.leftAnchor="137.0" AnchorPane.rightAnchor="533.0" AnchorPane.topAnchor="55.0" />
+                        <TextField fx:id="tf_seatcap" layoutX="136.0" layoutY="132.0" prefHeight="27.0" prefWidth="230.0" promptText="e.g. 4" AnchorPane.leftAnchor="136.0" AnchorPane.topAnchor="132.0" />
+                        <TextField fx:id="tf_min" layoutX="136.0" layoutY="93.0" prefHeight="27.0" prefWidth="91.0" promptText="min" AnchorPane.bottomAnchor="347.0" AnchorPane.leftAnchor="136.0" AnchorPane.rightAnchor="673.0" AnchorPane.topAnchor="93.0" />
+                        <TextField fx:id="tf_max" layoutX="266.0" layoutY="93.0" prefHeight="27.0" prefWidth="100.0" promptText="max" AnchorPane.bottomAnchor="347.0" AnchorPane.leftAnchor="276.0" AnchorPane.rightAnchor="533.0" AnchorPane.topAnchor="93.0" />
+                        <DatePicker fx:id="dp_datefrom" layoutX="138.0" layoutY="250.0" prefHeight="27.0" prefWidth="120.0" promptText="from" showWeekNumbers="true" AnchorPane.leftAnchor="138.0" AnchorPane.topAnchor="250.0" />
+                        <Button layoutX="16.0" layoutY="329.0" mnemonicParsing="false" onAction="#OnclickedSearchVehicle" prefHeight="61.0" prefWidth="249.0" text="Search" textFill="#c7ba32">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="393.0" layoutY="426.0" mnemonicParsing="false" onAction="#onClickedSeeDetails" prefHeight="32.0" prefWidth="149.0" text="See Details" textFill="#34a6c7">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <RadioButton fx:id="rb_a" layoutX="137.0" layoutY="211.0" mnemonicParsing="false" text="A" visible="false" AnchorPane.bottomAnchor="238.5" AnchorPane.leftAnchor="137.0" AnchorPane.rightAnchor="731.0" AnchorPane.topAnchor="211.0">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="G2" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="rb_b" layoutX="189.0" layoutY="211.0" mnemonicParsing="false" text="B" toggleGroup="$G2" visible="false" AnchorPane.bottomAnchor="238.5" AnchorPane.leftAnchor="189.0" AnchorPane.rightAnchor="679.0" AnchorPane.topAnchor="211.0" />
+                        <RadioButton fx:id="rb_c" layoutX="240.0" layoutY="211.0" mnemonicParsing="false" text="C" toggleGroup="$G2" visible="false" AnchorPane.bottomAnchor="238.5" AnchorPane.leftAnchor="240.0" AnchorPane.rightAnchor="627.5" AnchorPane.topAnchor="211.0" />
+                        <GridPane layoutX="14.0" layoutY="174.0" prefHeight="23.0" prefWidth="352.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="123.0" minWidth="10.0" prefWidth="123.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="10.0" prefWidth="113.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="124.0" minWidth="10.0" prefWidth="116.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label prefHeight="8.0" prefWidth="102.0" text="Power Unit:" />
+                              <RadioButton fx:id="mFmotorized" mnemonicParsing="false" onAction="#onActionMotorized" prefHeight="18.0" prefWidth="89.0" text="Motorized" GridPane.columnIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="Group1" />
+                                 </toggleGroup></RadioButton>
+                              <RadioButton fx:id="mFwithBrawn" mnemonicParsing="false" onAction="#onActionWithBrawn" text="Brawn" toggleGroup="$Group1" GridPane.columnIndex="2" />
+                           </children>
+                        </GridPane>
+                        <Button layoutX="169.0" layoutY="405.0" mnemonicParsing="false" onAction="#onClickedAddnewVehicle" prefHeight="53.0" prefWidth="199.0" text="Add New Vehicle" textFill="#3446c7">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="567.0" layoutY="426.0" mnemonicParsing="false" onAction="#onClickedBookItNow" prefHeight="32.0" prefWidth="315.0" text="Book it now" textFill="#32c760">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="15.0" layoutY="405.0" mnemonicParsing="false" onAction="#onClickeddeleteVehicle" prefHeight="53.0" prefWidth="128.0" text="Delete Vehicle" textFill="#c64635">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="tf_hourfrom" layoutX="271.0" layoutY="250.0" prefHeight="27.0" prefWidth="93.0" promptText="Hour e.g 17:00">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                        <DatePicker fx:id="dp_dateto" layoutX="138.0" layoutY="287.0" prefHeight="27.0" prefWidth="120.0" promptText="to" showWeekNumbers="true" />
+                        <TextField fx:id="tf_hourto" layoutX="271.0" layoutY="287.0" prefHeight="27.0" prefWidth="93.0" promptText="Hour e.g 17:00">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                        <Button layoutX="277.0" layoutY="329.0" mnemonicParsing="false" onAction="#OnClickedClear" prefHeight="61.0" prefWidth="89.0" style="-fx-background-color: black;" text="Clear" textFill="WHITE">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Booking Administrator / All Bookings">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tv_editbox" layoutX="22.0" layoutY="23.0" onMouseClicked="#OnClickedTvbooking" prefHeight="428.0" prefWidth="492.0">
+                          <columns>
+                            <TableColumn fx:id="tce_cname" prefWidth="122.0" text="Costumer Name" />
+                            <TableColumn fx:id="tce_status" prefWidth="78.0" text="Status" />
+                              <TableColumn fx:id="tce_bookingper" prefWidth="187.0" text="Booking Period" />
+                              <TableColumn fx:id="tce_preis" prefWidth="86.0" text="Total Preis" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="bt_editbook" layoutX="548.0" layoutY="396.0" mnemonicParsing="false" onAction="#OnClickedEditBookingButton" prefHeight="53.0" prefWidth="142.0" text="Details / Edit" />
+                        <Label fx:id="lb_invoice" alignment="TOP_LEFT" layoutX="548.0" layoutY="36.0" prefHeight="335.0" prefWidth="321.0" />
+                        <Button layoutX="721.0" layoutY="396.0" mnemonicParsing="false" onAction="#OnClickedMakeInvoice" prefHeight="53.0" prefWidth="142.0" text="Make Invoice" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Statistic">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <DatePicker fx:id="dp_statfrom" layoutX="24.0" layoutY="31.0" prefHeight="27.0" prefWidth="130.0" promptText="from" />
+                        <DatePicker fx:id="dp_statto" layoutX="24.0" layoutY="75.0" prefHeight="27.0" prefWidth="130.0" promptText="to" />
+                        <CheckBox fx:id="cb_a" layoutX="171.0" layoutY="36.0" mnemonicParsing="false" text="A" />
+                        <CheckBox fx:id="cb_b" layoutX="210.0" layoutY="36.0" mnemonicParsing="false" text="B" />
+                        <CheckBox fx:id="cb_none" layoutX="294.0" layoutY="36.0" mnemonicParsing="false" text="None" />
+                        <CheckBox fx:id="cb_c" layoutX="254.0" layoutY="36.0" mnemonicParsing="false" text="C" />
+                        <LineChart fx:id="lc_chart" layoutX="17.0" layoutY="152.0" prefHeight="290.0" prefWidth="349.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <BarChart fx:id="bc_chart" layoutX="372.0" layoutY="34.0" prefHeight="410.0" prefWidth="500.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                        <Label alignment="CENTER" layoutX="417.0" layoutY="14.0" prefHeight="17.0" prefWidth="448.0" text="Number of rental transactions on day of week" textFill="#a45f05">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="63.0" layoutY="132.0" prefHeight="20.0" prefWidth="295.0" text="Revenues" textFill="#a45f05">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="171.0" layoutY="75.0" mnemonicParsing="false" onAction="#OnClickedStatsClear" prefHeight="27.0" prefWidth="55.0" text="Clear" />
+                        <Button layoutX="243.0" layoutY="75.0" mnemonicParsing="false" onAction="#OnClickedApply" prefHeight="27.0" prefWidth="108.0" text="Apply" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+         <StackPane.margin>
+            <Insets top="50.0" />
+         </StackPane.margin>
+      </TabPane>
+   </children>
+</StackPane>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="sp_addvehicle" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.tuwien.sepm.assignment.individual.universe.ui.AddVehicleController">
+   <children>
+  <AnchorPane id="Group1" minHeight="0.0" minWidth="0.0" prefHeight="480.0" prefWidth="850.0">
+         <children>
+            <Label layoutX="26.0" layoutY="37.0" text="Title:*" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="37.0" />
+            <Label layoutX="25.0" layoutY="240.0" text="Seating Capacity:" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="240.0" />
+            <TextField fx:id="tf_title" layoutX="155.0" layoutY="34.0" prefHeight="27.0" prefWidth="230.0" promptText="e.g. BMW X5" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="515.0" AnchorPane.topAnchor="34.0" />
+            <TextField fx:id="tf_buildyear" layoutX="155.0" layoutY="73.0" prefHeight="27.0" prefWidth="230.0" promptText="e.g. 1982" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="515.0" AnchorPane.topAnchor="73.0" />
+            <TextField fx:id="tf_description" alignment="TOP_LEFT" layoutX="155.0" layoutY="111.0" prefHeight="112.0" prefWidth="230.0" promptText="e.g. BMW X5" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="111.0" />
+            <TextField fx:id="tf_scap" layoutX="155.0" layoutY="236.0" prefHeight="27.0" prefWidth="230.0" promptText="e.g. 4" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="236.0" />
+            <Button layoutX="500.0" layoutY="394.0" mnemonicParsing="false" onAction="#OnclickedSave" prefHeight="71.0" prefWidth="122.0" text="Save Vehicle" textFill="#3cc732" AnchorPane.leftAnchor="500.0" AnchorPane.topAnchor="394.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="556.0" layoutY="336.0" mnemonicParsing="false" onAction="#OnClickedUpload" prefHeight="23.0" prefWidth="180.0" text="Foto Upload" textFill="#6434c7" AnchorPane.leftAnchor="556.0" AnchorPane.topAnchor="336.0">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Label layoutX="25.0" layoutY="280.0" text="Price p.hr.*" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="280.0" />
+            <Label layoutX="26.0" layoutY="77.0" text="Build Year:*" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="77.0" />
+            <Label fx:id="lb_licenseplate" layoutX="24.0" layoutY="386.0" text="License Plate:**" visible="false" />
+            <Label fx:id="lb_powerKW" layoutX="24.0" layoutY="420.0" text="Power in kW:**" visible="false" />
+            <TextField fx:id="tf_licensePlate" layoutX="153.0" layoutY="380.0" prefHeight="27.0" prefWidth="230.0" promptText="e.g. W 1023 KO" visible="false" />
+            <TextField fx:id="tf_powerKW" layoutX="153.0" layoutY="416.0" prefHeight="27.0" prefWidth="230.0" promptText="e.g. 90" visible="false" />
+            <TextField fx:id="tf_price" layoutX="155.0" layoutY="275.0" prefHeight="27.0" prefWidth="230.0" promptText="e.g 30€" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="275.0" />
+            <Label layoutX="25.0" layoutY="116.0" text="Description:" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="116.0" />
+            <RadioButton fx:id="rb_motirized" layoutX="153.0" layoutY="319.0" mnemonicParsing="false" onAction="#onClickedMotorized" text="motorized" AnchorPane.leftAnchor="153.0" AnchorPane.topAnchor="319.0">
+               <toggleGroup>
+                  <ToggleGroup fx:id="Group1" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="rb_brawn" layoutX="280.0" layoutY="319.0" mnemonicParsing="false" onAction="#OnClickedBrawn" text="with brawn" toggleGroup="$Group1" AnchorPane.leftAnchor="319.0" AnchorPane.topAnchor="319.0" />
+            <Label layoutX="24.0" layoutY="318.0" text="Power Unit:*" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="318.0" />
+            <ImageView fx:id="Iv_Foto" fitHeight="272.0" fitWidth="417.0" layoutX="436.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="436.0" AnchorPane.topAnchor="34.0" />
+            <Label layoutX="22.0" layoutY="473.0" text="* mandatory " AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="473.0">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="465.0" text="**mandatory if motorized" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="465.0">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Label>
+            <Label fx:id="lb_dlicenses" layoutX="23.0" layoutY="352.0" text="Driving Licenses:" visible="false" />
+            <RadioButton fx:id="rb_a" layoutX="153.0" layoutY="351.0" mnemonicParsing="false" text="A" visible="false">
+               <toggleGroup>
+                  <ToggleGroup fx:id="Group2" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="rb_b" layoutX="218.0" layoutY="351.0" mnemonicParsing="false" text="B" visible="false">
+               <toggleGroup>
+                  <ToggleGroup fx:id="Group3" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="rb_c" layoutX="280.0" layoutY="351.0" mnemonicParsing="false" text="C" visible="false">
+               <toggleGroup>
+                  <ToggleGroup fx:id="Group4" />
+               </toggleGroup>
+            </RadioButton>
+            <Button fx:id="Exit" layoutX="679.0" layoutY="394.0" mnemonicParsing="false" onAction="#OnClickedExit" prefHeight="71.0" prefWidth="122.0" text="Exit" textFill="#c74634" AnchorPane.leftAnchor="679.0" AnchorPane.topAnchor="394.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label contentDisplay="TOP" layoutX="382.0" layoutY="-34.0" text="Add new Vehicle" textAlignment="CENTER" textFill="#a45f05" AnchorPane.leftAnchor="382.0" AnchorPane.topAnchor="-34.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Label>
+         </children>
+         <StackPane.margin>
+            <Insets top="50.0" />
+         </StackPane.margin>
+      </AnchorPane>
+   </children>
+</StackPane>
